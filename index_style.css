@@ -1,0 +1,20 @@
+#tela-inicial {
+    height: 1080px;
+    background-image: radial-gradient(rgb(11, 16, 23), rgb(6, 25, 35));
+    color: white;
+    padding: 10px 150px 0px;
+}
+
+#tela-inicial .btn {
+    border-radius: 18px;
+    background-image: linear-gradient(to right, rgb(30, 113, 227), rgb(56, 151, 241));
+    text-decoration: none;
+    padding: 4px 17px;
+    font-size: 16px;
+    color: white;
+}
+
+.logo-horizontal {
+    /* height: 28.59px;
+    width: 147px; */
+}
