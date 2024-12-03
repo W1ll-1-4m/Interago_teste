@@ -1,3 +1,7 @@
+body {
+    font-family: "Raleway", sans-serif !important
+}
+
 #tela-inicial {
     height: 1080px;
     background-image: radial-gradient(rgb(11, 16, 23), rgb(6, 25, 35));
@@ -12,9 +16,27 @@
     padding: 4px 17px;
     font-size: 16px;
     color: white;
+    font-weight: 600;
 }
 
-.logo-horizontal {
-    /* height: 28.59px;
-    width: 147px; */
+#tela-recursos {
+    padding: 100px 150px 0;
+    height: 1080px;
+    color: #1A1A1A;
+}
+
+#tela-recursos .btn {
+    border-radius: 18px;
+    background-image: linear-gradient(to right, rgb(30, 113, 227), rgb(56, 151, 241));
+    text-decoration: none;
+    padding: 4px 17px;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+}
+
+#tela-integracao {
+    background-color: #EEEEEE;
+    padding: 182px 150px 0;
+    height: 1920px;
 }
