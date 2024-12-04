@@ -16,22 +16,31 @@
 <body>
     <!-- tela inicial -->
     <div class="container-fluid" id="tela-inicial">
-        <div class="row justify-content-center" style="padding-top: 42px;">
-            <div class="col-4">
-                teste
+        <div style="position: fixed">
+            <!-- Usar offcanvas sidebar? -->
+            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+                <!-- ícone "hamburguer" para abrir sidebar -->
+                <svg width="25" height="19" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line y1="1.5" x2="29" y2="1.5" stroke="white" stroke-width="3"/>
+                <line y1="11.5" x2="20.7143" y2="11.5" stroke="white" stroke-width="3"/>
+                <line y1="21.5" x2="13.8095" y2="21.5" stroke="white" stroke-width="3"/>
+                </svg>
+            </button>  
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-4"></div>
+            <div class="col-4 text-center">
+                <img src="/images/interago_novo_logo.svg#svgView(viewBox(220, 470, 200, 200))" height="45px" width="145px">
             </div>
-            <div class="col-4">
-                <img src="/images/interago_novo_logo.svg#svgView(viewBox(220, 470, 200, 200))" height="50px" width="150px">
-            </div>
-            <div class="col-4">
+            <div class="col-4 text-end">
                 <a href="#" class="btn" style="margin-right: 8px">Acesse sua conta</a>
                 <a href="#" class="btn" style="background-image: none; border-color: white; ">Suporte</a> 
             </div>
         </div>
-        <div class="text-center" style="margin-top: 188px;">
-            <h1 style="font-weight: 700; font-size: 80px; margin-bottom:45px;">Plataforma para lojas virtuais, blogs e websites</h1>
-            <p class="mx-auto" style="font-size: 20px; width: 570px">Uma plataforma brasileira que reúne recursos de ponta para amplificar seu negócio na internet</p>
-            <a href="#" class="btn" style="padding: 13px 13px; border-radius: 28px;">Agendar demonstração</a>
+        <div class="text-center" style="margin-top: 130px;">
+            <h1 class="mx-auto" style="font-weight: 700; font-size: 64px; margin-bottom:33px; max-width: 850px;">Plataforma para lojas virtuais, blogs e websites.</h1>
+            <p class="mx-auto" style="font-weight: 400; font-size: 15.4px; max-width: 450px; letter-spacing: 1px; margin-bottom: 13px;">Uma plataforma brasileira que reúne recursos de ponta para amplificar seu negócio na internet</p>
+            <a href="#" class="btn" style="padding: 10px 10px; border-radius: 28px; font-size: 13px">Agendar demonstração</a>
         </div>
 
         <!-- Adicionar imagens -->

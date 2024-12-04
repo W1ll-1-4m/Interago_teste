@@ -6,21 +6,21 @@ body {
     height: 1080px;
     background-image: radial-gradient(rgb(11, 16, 23), rgb(6, 25, 35));
     color: white;
-    padding: 10px 150px 0px;
+    padding: 30px 25px 0px;
 }
 
-#tela-inicial .btn {
+#tela-inicial .btn:not([type="button"]) {
     border-radius: 18px;
     background-image: linear-gradient(to right, rgb(30, 113, 227), rgb(56, 151, 241));
     text-decoration: none;
-    padding: 4px 17px;
-    font-size: 16px;
+    padding: 4px 13px;
+    font-size: 13px;
     color: white;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 #tela-recursos {
-    padding: 100px 150px 0;
+    padding: 100px 50px 0;
     height: 1080px;
     color: #1A1A1A;
 }
@@ -30,13 +30,13 @@ body {
     background-image: linear-gradient(to right, rgb(30, 113, 227), rgb(56, 151, 241));
     text-decoration: none;
     padding: 4px 17px;
-    font-size: 16px;
+    font-size: 15px;
     color: white;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 #tela-integracao {
     background-color: #EEEEEE;
-    padding: 182px 150px 0;
+    padding: 182px 50px 0;
     height: 1920px;
 }
