@@ -33,8 +33,8 @@
                 <img src="/images/interago_novo_logo.svg#svgView(viewBox(220, 470, 200, 200))" height="45px" width="145px">
             </div>
             <div class="col-4 text-end">
-                <a href="#" class="btn" style="margin-right: 8px">Acesse sua conta</a>
-                <a href="#" class="btn" style="background-image: none; border-color: white; ">Suporte</a> 
+                <a href="#" class="btn">Acesse sua conta</a>
+                <a href="#" class="btn" style="background-image: none; border-color: white; margin-left: 8px">Suporte</a> 
             </div>
         </div>
         <div class="text-center" style="margin-top: 130px;">
@@ -48,20 +48,63 @@
     </div>
     <!-- tela recursos -->
     <div class="container-fluid" id="tela-recursos">
-        <div class="row">
-            <div class="col-2">
-                adicionar "timeline"
+        <div class="d-flex">
+            <!-- Timeline nav -->
+            <!-- Usar toggleable tabs? -->
+            <div style="max-width: 20%;">
+                <ul class="navbar-nav timeline-nav" role="tablist">
+                    <li class="nav-item timeline-item">
+                        <a class="nav-link active" href="#solicitar-site" data-bs-toggle="tab">1. Solicite seu site</a>
+                    </li>
+                    <li class="nav-item timeline-item">
+                        <a class="nav-link" href="#venda-online" data-bs-toggle="tab">2. Venda online</a>
+                    </li>
+                    <li class="nav-item timeline-item">
+                        <a class="nav-link" href="#gerencie" data-bs-toggle="tab">3. Gerencie</a>
+                    </li>
+                    <li class="nav-item timeline-item">
+                        <a class="nav-link" href="#obter-result" data-bs-toggle="tab">4. Obtenha resultados</a>
+                    </li>
+                </ul>
             </div>
-            <div class="col-6">
-                <h2 style="font-weight: 700; font-size:40px; margin-bottom: 40px;">Dê o primeiro passo para elevar seu negócio para o próximo nível com a internet</h2>
-                <p style="margin-bottom: 50px;">Com um ambiente desenvolvido para atender diferentes categorias de sites, 
-                    o Interago oferece excelência na criação de lojas virtuais, portais de notícias e sites institucionais. 
-                    O primeiro passo para o sucesso é dado ao falar com nossos especialistas para conhecer todas as oportunidades para sua empresa.
-                </p>
-                <a href="#" class="btn" style="margin-bottom: 179px;">Começar agora</a>
-            </div>
-            <div class="col-4">
-                Imagem
+            <!-- Conteúdo das abas -->
+            <div class="tab-content position-relative" style="max-width: 80%;">
+                <!-- tab 1 -->
+                <div class="tab-pane show active fade d-flex" id="solicitar-site" style="flex-wrap: wrap; top:0; left:0">
+                    <div style="max-width: 60%;">
+                        <h2 style="font-weight: 700; font-size:34px; margin-bottom: 30px; max-width: 530px;">Dê o primeiro passo para elevar seu negócio para o próximo nível com a internet</h2>
+                        <p style="margin-bottom: 35px; font-weight: 502; font-size: 15px; max-width: 480px; word-spacing: 2px;">Com um ambiente desenvolvido para atender diferentes categorias de sites, 
+                            o Interago oferece excelência na criação de lojas virtuais, portais de notícias e sites institucionais. 
+                            O primeiro passo para o sucesso é dado ao falar com nossos especialistas para conhecer todas as oportunidades para sua empresa.
+                        </p>
+                        <a href="#" class="btn" style="margin-bottom: 179px;">Começar agora</a>
+                    </div>
+                    <div style="max-width: 40%; ">
+                        <img src="images/inicial-interago.png" height="500px" alt="imagem" style="max-width: 100%; height: auto;">
+                    </div>
+                </div>
+                <!-- tab 2 -->
+                <div class="tab-pane fade d-flex" id="venda-online" style="flex-wrap: wrap; position: absolute; top:0; left:0">
+                    <div style="max-width: 60%;">
+                        <h2 style="font-weight: 700; font-size:34px; margin-bottom: 30px; max-width: 530px;">Aba 2</h2>
+                        <p style="margin-bottom: 35px; font-weight: 502; font-size: 15px; max-width: 480px; word-spacing: 2px;">Com um ambiente desenvolvido para atender diferentes categorias de sites</p>
+                        <a href="#" class="btn">Começar agora</a>
+                    </div>
+                    <div style="max-width: 40%; ">
+                        <img src="images/inicial-interago.png" height="500px" alt="imagem" style="max-width: 100%; height: auto;">
+                    </div>
+                </div>
+                <!-- tab 3 -->
+                <div class="tab-pane fade d-flex" id="gerencie" style="flex-wrap: wrap; position: absolute; top:0; left:0">
+                    <div style="max-width: 60%;">
+                        <h2 style="font-weight: 700; font-size:34px; margin-bottom: 30px; max-width: 530px;">Aba 3</h2>
+                        <p style="margin-bottom: 35px; font-weight: 502; font-size: 15px; max-width: 480px; word-spacing: 2px;">Com um ambiente desenvolvido para atender diferentes categorias de sites</p>
+                        <a href="#" class="btn">Começar agora</a>
+                    </div>
+                    <div style="max-width: 40%; ">
+                        <img src="images/inicial-interago.png" height="500px" alt="imagem" style="max-width: 100%; height: auto;">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
