@@ -9,6 +9,21 @@ body {
     padding: 30px 25px 0px;
 }
 
+#tela-inicial h1 {
+    font-weight: 700; 
+    font-size: 64px; 
+    margin-bottom:33px; 
+    max-width: 850px;
+}
+
+#tela-inicial p {
+    font-weight: 400; 
+    font-size: 15.4px; 
+    max-width: 450px; 
+    letter-spacing: 1px; 
+    margin-bottom: 13px;
+}
+
 #tela-inicial .btn:not([type="button"]) {
     border-radius: 18px;
     background-image: linear-gradient(to right, rgb(30, 113, 227), rgb(56, 151, 241));
@@ -20,8 +35,8 @@ body {
 }
 
 #tela-recursos {
-    padding: 200px 50px 0;
-    height: 1080px;
+    padding: 50px 25px;
+    height: 100%;
     color: #1A1A1A;
 }
 
@@ -35,20 +50,90 @@ body {
     font-weight: 450;
 }
 
-.timeline-nav a {
-    color: green;
-    font-size: 13px;
-    margin-right: 20px;
+#tela-recursos .img-car img {
+    /* filter: grayscale(100%); */
+    margin-right: 30px;
 }
 
-.timeline-nav a:active {
-    color: red;
-    font-size: 13px;
-    margin-right: 20px;
+
+/* elementos da timeline-nav */
+.node {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    display:inline-block;
+    transition: all 1000ms ease;
+}
+
+.divider {
+    height: 40px;
+    width: 2px;
+    margin-left: 3px;
+    transition: all 800ms ease;
+}
+
+li .nav-link {
+    display:inline;
+    color: #b1b1b1;
+    font-size: 10px;
+    font-weight: 700;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+li .nav-link:hover {
+    color: black;
+}
+
+li .nav-link:active {
+    color: black;
+}
+
+li {
+    list-style: none;
+    line-height: 1px;
+}
+
+.ativo{ background-color: black; }
+.inativo { background-color: #b1b1b1; }
+
+/* fim elementos navbar */
+
+.tab-pane {
+    align-items: center;
+    flex-wrap: wrap; 
+    top:0; 
+    left:0;
+}
+
+.tab-pane h2 {
+    font-weight: 700; 
+    font-size:34px; 
+    margin-bottom: 30px; 
+    max-width: 530px;
+}
+
+.tab-pane p {
+    margin-bottom: 35px; 
+    font-weight: 502; 
+    font-size: 15px; 
+    max-width: 480px; 
+    word-spacing: 2px;
+}
+
+/* .tab-pane a {
+    margin-bottom: 179px;
+} */
+
+.vertical {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    transform-origin: cn;
 }
 
 #tela-integracao {
     background-color: #1A1A1A;
     padding: 182px 50px 0;
-    height: 1920px;
+    height: 100%;
 }
+

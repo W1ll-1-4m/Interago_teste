@@ -38,9 +38,9 @@
             </div>
         </div>
         <div class="text-center" style="margin-top: 130px;">
-            <h1 class="mx-auto" style="font-weight: 700; font-size: 64px; margin-bottom:33px; max-width: 850px;">Plataforma para lojas virtuais, blogs e websites.</h1>
-            <p class="mx-auto" style="font-weight: 400; font-size: 15.4px; max-width: 450px; letter-spacing: 1px; margin-bottom: 13px;">Uma plataforma brasileira que reúne recursos de ponta para amplificar seu negócio na internet</p>
-            <a href="#" class="btn" style="padding: 10px 10px; border-radius: 28px; font-size: 13px">Agendar demonstração</a>
+            <h1 class="mx-auto">Plataforma para lojas virtuais, blogs e websites.</h1>
+            <p class="mx-auto">Uma plataforma brasileira que reúne recursos de ponta para amplificar seu negócio na internet</p>
+            <a href="#" class="btn" style="padding: 10px 10px; border-radius: 28px">Agendar demonstração</a>
         </div>
 
         <!-- Adicionar imagens -->
@@ -48,72 +48,121 @@
     </div>
     <!-- tela recursos -->
     <div class="container-fluid" id="tela-recursos">
-        <div class="d-flex">
-            <!-- Timeline nav -->
+        <div class="d-flex w-100">
+            <!-- navbar -->
             <!-- Usar toggleable tabs? -->
-            <div style="max-width: 20%;">
-                <ul class="navbar-nav timeline-nav" role="tablist">
-                    <li class="nav-item timeline-item">
-                        <a class="nav-link active" href="#solicitar-site" data-bs-toggle="tab">1. Solicite seu site</a>
-                    </li>
-                    <li class="nav-item timeline-item">
-                        <a class="nav-link" href="#venda-online" data-bs-toggle="tab">2. Venda online</a>
-                    </li>
-                    <li class="nav-item timeline-item">
-                        <a class="nav-link" href="#gerencie" data-bs-toggle="tab">3. Gerencie</a>
-                    </li>
-                    <li class="nav-item timeline-item">
-                        <a class="nav-link" href="#obter-result" data-bs-toggle="tab">4. Obtenha resultados</a>
-                    </li>
+            <div style="max-width: 15%; align-self: center;">
+                <ul id="timeline-navbar" class="navbar-nav" role="tablist">
+                    <li><div class="node ativo nav-item"></div><a id="link-1" class="nav-link active" href="#solicitar-site" data-bs-toggle="tab">1. Solicite seu site</a></li>
+                    <li><div class="divider inativo"></div></li>
+                    <li><div class="node inativo"></div><a id="link-2" class="nav-link" href="#venda-online" data-bs-toggle="tab">2. Venda online</a></li>
+                    <li><div class="divider inativo"></div></li>
+                    <li><div class="node inativo"></div><a id="link-3" class="nav-link" href="#gerencie" data-bs-toggle="tab">3. Gerencie</a></li>
+                    <li><div class="divider inativo"></div></li>
+                    <li><div class="node inativo"></div><a id="link-4" class="nav-link" href="#obter-result" data-bs-toggle="tab">4. Obtenha resultados</a></li>
                 </ul>
             </div>
+            
+            <!-- Script navbar -->
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const navLinks = document.querySelectorAll(".nav-link");
+                    const node = document.querySelectorAll(".node");
+                    const divider = document.querySelectorAll(".divider");
+                    navLinks.forEach((link, index) => {
+                        link.addEventListener("click", () => {
+                            node.forEach(node => node.classList.remove("ativo"));
+                            node.forEach(node => node.classList.add("inativo"));
+                            divider.forEach(node => node.classList.remove("ativo"));
+                            divider.forEach(node => node.classList.add("inativo"));
+                            for (i = index; i >= 0; i--) {
+                                node[i].classList.remove("inativo");
+                                node[i].classList.add("ativo");
+                                divider[i - 1].classList.remove("inativo");
+                                divider[i - 1].classList.add("ativo");
+                            };
+                        });
+                    });
+                });
+            </script>
+
             <!-- Conteúdo das abas -->
-            <div class="tab-content position-relative" style="max-width: 80%;">
+            <div class="tab-content position-relative" style="max-width: 85%;">
                 <!-- tab 1 -->
-                <div class="tab-pane show active fade d-flex" id="solicitar-site" style="flex-wrap: wrap; top:0; left:0">
-                    <div style="max-width: 60%;">
-                        <h2 style="font-weight: 700; font-size:34px; margin-bottom: 30px; max-width: 530px;">Dê o primeiro passo para elevar seu negócio para o próximo nível com a internet</h2>
-                        <p style="margin-bottom: 35px; font-weight: 502; font-size: 15px; max-width: 480px; word-spacing: 2px;">Com um ambiente desenvolvido para atender diferentes categorias de sites, 
+                <div class="tab-pane show active fade d-flex w-100" id="solicitar-site">
+                    <div style="max-width: 40%;">
+                        <h2>Dê o primeiro passo para elevar seu negócio para o próximo nível com a internet</h2>
+                        <p>
+                            Com um ambiente desenvolvido para atender diferentes categorias de sites, 
                             o Interago oferece excelência na criação de lojas virtuais, portais de notícias e sites institucionais. 
                             O primeiro passo para o sucesso é dado ao falar com nossos especialistas para conhecer todas as oportunidades para sua empresa.
                         </p>
-                        <a href="#" class="btn" style="margin-bottom: 179px;">Começar agora</a>
+                        <a href="#" class="btn">Começar agora</a>
                     </div>
-                    <div style="max-width: 40%; ">
-                        <img src="images/inicial-interago.png" height="500px" alt="imagem" style="max-width: 100%; height: auto;">
+                    <div style="max-width: 60%;">
+                        <img src="images/inicial-interago.png" alt="imagem" style="width: 100%; height: auto;">
                     </div>
                 </div>
                 <!-- tab 2 -->
-                <div class="tab-pane fade d-flex" id="venda-online" style="flex-wrap: wrap; position: absolute; top:0; left:0">
-                    <div style="max-width: 60%;">
-                        <h2 style="font-weight: 700; font-size:34px; margin-bottom: 30px; max-width: 530px;">Aba 2</h2>
-                        <p style="margin-bottom: 35px; font-weight: 502; font-size: 15px; max-width: 480px; word-spacing: 2px;">Com um ambiente desenvolvido para atender diferentes categorias de sites</p>
-                        <a href="#" class="btn">Começar agora</a>
+                <div class="tab-pane fade d-flex w-100 position-absolute" id="venda-online">
+                    <div style="max-width: 40%;">
+                        <h2>Tab 2</h2>
+                        <p>
+                            Com um ambiente desenvolvido para atender diferentes categorias de sites, 
+                            o Interago oferece excelência na criação de lojas virtuais, portais de notícias e sites institucionais. 
+                            O primeiro passo para o sucesso é dado ao falar com nossos especialistas para conhecer todas as oportunidades para sua empresa.
+                        </p>
+                       
                     </div>
-                    <div style="max-width: 40%; ">
-                        <img src="images/inicial-interago.png" height="500px" alt="imagem" style="max-width: 100%; height: auto;">
+                    <div style="width: 60%;">
+                        <img src="images/inicial-interago.png" alt="imagem" style="width: 100%; height: auto;">
                     </div>
                 </div>
                 <!-- tab 3 -->
-                <div class="tab-pane fade d-flex" id="gerencie" style="flex-wrap: wrap; position: absolute; top:0; left:0">
-                    <div style="max-width: 60%;">
-                        <h2 style="font-weight: 700; font-size:34px; margin-bottom: 30px; max-width: 530px;">Aba 3</h2>
-                        <p style="margin-bottom: 35px; font-weight: 502; font-size: 15px; max-width: 480px; word-spacing: 2px;">Com um ambiente desenvolvido para atender diferentes categorias de sites</p>
+                <div class="tab-pane fade d-flex w-100 position-absolute" id="gerencie">
+                    <div style="max-width: 40%;">
+                        <h2>Tab 3</h2>
+                        <p>
+                            Com um ambiente desenvolvido para atender diferentes categorias de sites, 
+                            o Interago oferece excelência na criação de lojas virtuais, portais de notícias e sites institucionais. 
+                            O primeiro passo para o sucesso é dado ao falar com nossos especialistas para conhecer todas as oportunidades para sua empresa.
+                        </p>
                         <a href="#" class="btn">Começar agora</a>
                     </div>
-                    <div style="max-width: 40%; ">
-                        <img src="images/inicial-interago.png" height="500px" alt="imagem" style="max-width: 100%; height: auto;">
+                    <div style="width: 60%;">
+                        <img src="images/inicial-interago.png" alt="imagem" style="width: 100%; height: auto;">
+                    </div>
+                </div>
+                <!-- tab 4 -->
+                <div class="tab-pane fade d-flex w-100 position-absolute" id="obter-result">
+                    <div style="max-width: 40%;">
+                        <h2>Tab 4</h2>
+                        <p>
+                            Com um ambiente desenvolvido para atender diferentes categorias de sites, 
+                            o Interago oferece excelência na criação de lojas virtuais, portais de notícias e sites institucionais. 
+                            O primeiro passo para o sucesso é dado ao falar com nossos especialistas para conhecer todas as oportunidades para sua empresa.
+                        </p>
+                        <a href="#" class="btn">Começar agora</a>
+                    </div>
+                    <div style="width: 60%;">
+                        <img src="images/inicial-interago.png" alt="imagem" style="width: 100%; height: auto;">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-            imagens
+        <br>
+        <div class="w-100 px-auto img-car">
+            <img src="/images/logoClientes/ceftemLogo.png" style="max-width: 20%; height: auto;">
+            <img src="/images/logoClientes/logo 1.png" style="max-width: 20%; height: auto;">
+            <img src="/images/logoClientes/Logo Branco - Thermas Acqualinda-min 1.png" style="max-width: 20%; height: auto;">
+            <img src="/images/logoClientes/Logo-Lundgaard-Jensen-Banner 1.png" style="max-width: 20%; height: auto;">
+            <img src="/images/logoClientes/logoLaVillaSVGBranco 1.png" style="max-width: 20%; height: auto;">
         </div>
     </div>
     <!-- tela integrações -->
      <div id="tela-integracao">
         <h2 style="font-weight: 700; font-size: 50px">Integrações seguras e fundamentais para o sucesso</h2>
      </div>
+    
 </body>
 </html>
