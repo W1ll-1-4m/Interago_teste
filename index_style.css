@@ -2,6 +2,7 @@ body {
     font-family: "Raleway", sans-serif !important
 }
 
+/* tela-inicial */
 #tela-inicial {
     height: 1080px;
     background-image: radial-gradient(rgb(11, 16, 23), rgb(6, 25, 35));
@@ -33,8 +34,11 @@ body {
     color: white;
     font-weight: 400;
 }
+/* fim tela inicial */
 
+/* tela recursos */
 #tela-recursos {
+    overflow: hidden;
     padding: 50px 25px;
     height: 100%;
     color: #1A1A1A;
@@ -49,12 +53,6 @@ body {
     color: white;
     font-weight: 450;
 }
-
-#tela-recursos .img-car img {
-    /* filter: grayscale(100%); */
-    margin-right: 30px;
-}
-
 
 /* elementos da timeline-nav */
 .node {
@@ -77,15 +75,10 @@ li .nav-link {
     color: #b1b1b1;
     font-size: 10px;
     font-weight: 700;
-    margin-right: 5px;
     margin-left: 5px;
 }
 
 li .nav-link:hover {
-    color: black;
-}
-
-li .nav-link:active {
     color: black;
 }
 
@@ -95,10 +88,11 @@ li {
 }
 
 .ativo{ background-color: black; }
-.inativo { background-color: #b1b1b1; }
 
+.inativo { background-color: #b1b1b1; }
 /* fim elementos navbar */
 
+/* elementos tabs */
 .tab-pane {
     align-items: center;
     flex-wrap: wrap; 
@@ -121,19 +115,182 @@ li {
     word-spacing: 2px;
 }
 
-/* .tab-pane a {
-    margin-bottom: 179px;
-} */
-
-.vertical {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-    transform-origin: cn;
+.tab-pane .tab-text {
+    padding-left: 15px; 
+    max-width: 40%;
 }
 
+.tab-pane .tab-image {
+    max-width: 60%;
+}
+/* fim elementos tabs */
+
+/* infinite carousel */
+.img-car-cont {
+    display: flex;
+    width: 200%;
+    animation: img-rotation 20s linear infinite;
+}
+
+.img-car-list {
+    margin-top: 100px;
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+}
+
+.img-car-list .img-car-item {
+    width: 100%;
+    margin: 0 45px;
+}
+
+.img-car-list .logo-img {
+    width: 100%;
+    filter: grayscale(100);
+}
+
+@keyframes img-rotation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+/* fim infinite carousel */
+/* fim tela recursos */
+
+/* tela integração */
 #tela-integracao {
-    background-color: #1A1A1A;
-    padding: 182px 50px 0;
+    background-color: #e9e9e9;
+    padding: 100px 50px;
     height: 100%;
 }
 
+#tela-integracao h2 {
+    font-weight: 700; 
+    font-size: 40px; 
+    color: black; 
+    max-width: 700px; 
+    text-align: center;
+}
+
+.integracoes {
+    padding: 25px;
+    margin: 0 25px;
+    border-radius: 10%;
+    background-color: white;
+    width: 350px;
+    box-shadow: 0 0 20px rgb(197, 197, 197); 
+}
+
+.integracoes p {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.integracoes img {
+    margin-bottom: 20px;
+    width: 235px;
+}
+/* fim tela integração */
+
+
+#tela-webvitals {
+    color: white;
+    padding: 30px 25px 0px;
+    height: auto;
+    background-image: linear-gradient(to bottom, #0c0b17, #0c0e1c, #09254a)
+}
+
+.info-infra {
+    padding: 50px 100px;
+    border-radius: 15px;
+    border: 1px solid #30313c;
+}
+
+.info-infra h3 {
+    font-weight: bold;
+}
+
+.info-infra p {
+    font-weight: 300;
+    font-size: 13px;
+    margin: 0;
+}
+
+.webvitals {
+    margin: 70px 70px 0;
+}
+
+.webvitals h4 {
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.webvitals p {
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 18px;
+}
+
+/* infinite carousel */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    } to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slide-reverse {
+    from {
+        transform: translateX(-100%);
+    } to {
+        transform: translateX(0);
+    }
+}
+
+.telas {
+    overflow: hidden;
+    padding: 30px 0 0; 
+    white-space: nowrap;
+}
+
+.telas-slide {
+    animation: slide 15s linear infinite;
+    display: inline-block;
+}
+
+.telas-slide-reverse {
+    animation: slide-reverse 15s linear infinite;
+    display: inline-block;
+}
+
+.telas-slide img{
+    width: 500px;
+    margin-right: 10px;
+    filter: grayscale(100%);
+    transition: filter 0.5s;
+}
+
+.telas-slide-reverse img{
+    width: 500px;
+    margin-right: 10px;
+    filter: grayscale(100%);
+    transition: filter 0.5s;
+}
+
+.telas-slide img:hover {
+    transition: filter 0.5s;
+    filter: grayscale(0);
+}
+
+.telas-slide-reverse img:hover {
+    transition: filter 0.5s;
+    filter: grayscale(0);
+}
+
+
+
+/* fim infinite carousel */
