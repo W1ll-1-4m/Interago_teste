@@ -38,7 +38,6 @@ body {
 
 /* tela recursos */
 #tela-recursos {
-    overflow: hidden;
     padding: 50px 25px;
     height: 100%;
     color: #1A1A1A;
@@ -126,37 +125,30 @@ li {
 /* fim elementos tabs */
 
 /* infinite carousel */
-.img-car-cont {
-    display: flex;
-    width: 200%;
-    animation: img-rotation 20s linear infinite;
-}
-
-.img-car-list {
-    margin-top: 100px;
-    display: flex;
-    list-style-type: none;
-    align-items: center;
-}
-
-.img-car-list .img-car-item {
-    width: 100%;
-    margin: 0 45px;
-}
-
-.img-car-list .logo-img {
-    width: 100%;
-    filter: grayscale(100);
-}
-
-@keyframes img-rotation {
-    0% {
-      transform: translateX(0);
+@keyframes slide-logos {
+    from {
+        transform: translateX(0);
+    } to {
+        transform: translateX(-100.3%);
     }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
+}
+
+.logos {
+    overflow: hidden;
+    padding: 150px 0 50px; 
+    white-space: nowrap;
+}
+
+.logos-slide {
+    animation: slide-logos 10s linear infinite;
+    display: inline-block;
+}
+
+.logos-slide img{
+    width: 150px;
+    margin-right: 100px;
+    filter: grayscale(100%);
+}
 /* fim infinite carousel */
 /* fim tela recursos */
 
@@ -195,10 +187,10 @@ li {
 }
 /* fim tela integração */
 
-
+/* tela webvitals */
 #tela-webvitals {
     color: white;
-    padding: 30px 25px 0px;
+    padding: 30px 25px 70px;
     height: auto;
     background-image: linear-gradient(to bottom, #0c0b17, #0c0e1c, #09254a)
 }
@@ -258,12 +250,12 @@ li {
 }
 
 .telas-slide {
-    animation: slide 15s linear infinite;
+    animation: slide 20s linear infinite;
     display: inline-block;
 }
 
 .telas-slide-reverse {
-    animation: slide-reverse 15s linear infinite;
+    animation: slide-reverse 20s linear infinite;
     display: inline-block;
 }
 
@@ -290,7 +282,67 @@ li {
     transition: filter 0.5s;
     filter: grayscale(0);
 }
-
-
-
 /* fim infinite carousel */
+/* fim tela webvitals */
+
+/* tela visibilidade */
+#tela-visibilidade {
+    padding: 100px 25px 0px;
+    height: 1080px;  
+    transition: background-color 0.5s, color 0.5s;
+}
+
+#tela-visibilidade h2 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.tema-claro {
+    background-color: #EEEEEE;
+    color: black;
+}
+
+.tema-escuro {
+    background-color: #212121;
+    color: white;
+}
+
+.tema-claro.btn {
+    border-radius: 5px;
+    border-width: 1px;
+    font-size: 13px;
+    padding: 2px 5px;
+    margin: 10px;
+    border-color: transparent;
+    font-weight: 500;
+    color: #464646;
+}
+
+.tema-claro.btn.active {
+    border-color: #464646;
+}
+
+.tema-escuro.btn {
+    border-radius: 5px;
+    border-width: 1px;
+    font-size: 13px;
+    padding: 2px 5px;
+    margin: 10px;
+    border-color: transparent;
+    font-weight: 500;
+    color: white;
+}
+
+.tema-escuro.btn.active {
+    border-color: white;
+}
+
+.fadeIn-transition {
+    transition: opacity 0.2s linear;
+    opacity: 1;
+}
+
+.fadeIn-hide {
+    opacity: 0;
+}
+/* fim tela visibilidade */

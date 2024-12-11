@@ -163,21 +163,21 @@
 
         <br>
         <!-- image carousel -->
-        <div class="img-car-cont">
-            <ul class="img-car-list">
-                <li class="img-car-item"><img src="/images/logoClientes/ceftemLogo.png" class="logo-img"></li>
-                <li class="img-car-item"><img src="/images/logoClientes/logo 1.png" class="logo-img"></li>
-                <li class="img-car-item"><img src="/images/logoClientes/Logo Branco - Thermas Acqualinda-min 1.png" class="logo-img"></li>
-                <li class="img-car-item"><img src="/images/logoClientes/Logo-Lundgaard-Jensen-Banner 1.png" class="logo-img"></li>
-                <li class="img-car-item"><img src="/images/logoClientes/logoLaVillaSVGBranco 1.png" class="logo-img"></li>
-            </ul>
-            <ul class="img-car-list">
-                <li class="img-car-item"><img src="/images/logoClientes/ceftemLogo.png" class="logo-img"></li>
-                <li class="img-car-item"><img src="/images/logoClientes/logo 1.png" class="logo-img"></li>
-                <li class="img-car-item"><img src="/images/logoClientes/Logo Branco - Thermas Acqualinda-min 1.png" class="logo-img"></li>
-                <li class="img-car-item"><img src="/images/logoClientes/Logo-Lundgaard-Jensen-Banner 1.png" class="logo-img"></li>
-                <li class="img-car-item"><img src="/images/logoClientes/logoLaVillaSVGBranco 1.png" class="logo-img"></li>
-            </ul>
+        <div class="logos">
+            <div class="logos-slide">
+                <img src="/images/logoClientes/ceftemLogo.png">
+                <img src="/images/logoClientes/logo 1.png">
+                <img src="/images/logoClientes/Logo Branco - Thermas Acqualinda-min 1.png">
+                <img src="/images/logoClientes/Logo-Lundgaard-Jensen-Banner 1.png">
+                <img src="/images/logoClientes/logoLaVillaSVGBranco 1.png">
+            </div>
+            <div class="logos-slide">
+                <img src="/images/logoClientes/ceftemLogo.png">
+                <img src="/images/logoClientes/logo 1.png">
+                <img src="/images/logoClientes/Logo Branco - Thermas Acqualinda-min 1.png">
+                <img src="/images/logoClientes/Logo-Lundgaard-Jensen-Banner 1.png">
+                <img src="/images/logoClientes/logoLaVillaSVGBranco 1.png">
+            </div>    
         </div>
     </div>
     <!-- tela integrações -->
@@ -234,11 +234,11 @@
                 </div>
             </div>
         </div>
-        <div style="margin-top: 200px;">
+        <div style="margin: 200px 0 50px">
             <h2 class="text-center" style="font-weight: bold; font-size: 40px; width: 700px; margin: auto;">Tenha seu site otimizado nas pesquisas do Google</h2>
             <div class="d-flex webvitals">
                 <div class="col-4">
-                    <div class="d-flex">
+                    <div class="d-flex" style="max-width: 350px">
                         <img src="images/Ícones/iconeExpUser.svg" style="width: 70px; margin-right: 20px; align-self: flex-start">
                         <div class="column">
                             <h4>Experiência do usuário</h4>
@@ -249,7 +249,7 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <div class="d-flex">
+                    <div class="d-flex" style="max-width: 350px">
                         <img src="images/Ícones/iconePageSpeed.svg" style="width: 70px; margin-right: 20px; align-self: flex-start">
                         <div class="column">
                             <h4>PageSpeed Insights</h4>
@@ -261,7 +261,7 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <div class="d-flex">
+                    <div class="d-flex" style="max-width: 350px">
                         <img src="images/Ícones/iconeMetadados.svg" style="width: 70px; margin-right: 20px; align-self: flex-start">
                         <div class="column">
                             <h4>Metadados Estruturados</h4>
@@ -300,6 +300,51 @@
             </div>
         </div>
     </div>
+    <!-- tela visibilidade -->
+    <div class="container-fluid tema-claro" id="tela-visibilidade">
+        <div style="width: 600px; margin: auto">
+            <h2 class="text-center">O sistema se adapta a você. Experimente outro estilo.</h2>
+        </div>
+        <div class="d-flex justify-content-center" style="padding-top: 40px">
+            <button id="btnClaro" class="btn tema-claro active btnTema" onclick="toggleTheme('tema-claro')"><img id="btnClaroIcon" src="images/Ícones/iconeTemaClaro.svg">Tema claro</button>
+            <button id="btnEscuro" class="btn tema-claro btnTema" onclick="toggleTheme('tema-escuro')"><img id="btnEscuroIcon" src="images/Ícones/iconeTemaEscuro.svg">Tema escuro</button>
+        </div>
+        <div style="padding: 20px 40px">
+            <img id="mainImg" class="w-100 fadeIn-transition" src="images/tema_claro.png">
+        </div>
+        <!-- script para alterar tema -->
+        <script>
+            function toggleTheme(theme) {
+                const tela = document.getElementById("tela-visibilidade");
+                const buttons = document.querySelectorAll(".btnTema");
+                const mainImg = document.getElementById("mainImg");
+                const btnClaroIcon = document.getElementById("btnClaroIcon");
+                const btnEscuroIcon = document.getElementById("btnEscuroIcon");
 
+                tela.classList.remove("tema-claro", "tema-escuro");
+                tela.classList.add(theme);
+
+                buttons.forEach(button => button.classList.remove("active", "tema-claro", "tema-escuro"));
+                buttons.forEach(button => button.classList.add(theme));
+
+                mainImg.classList.add("fadeIn-hide");
+
+                setTimeout (() => {
+                    if (theme === "tema-claro") {
+                        document.getElementById("btnClaro").classList.add("active")
+                        mainImg.src = "images/tema_claro.png";
+                        btnClaroIcon.src = "images/Ícones/iconeTemaClaro.svg";
+                        btnEscuroIcon.src = "images/Ícones/iconeTemaEscuro.svg";
+                    } else if (theme === "tema-escuro") {
+                        document.getElementById("btnEscuro").classList.add("active")
+                        mainImg.src = "images/tema_escuro.png";
+                        btnClaroIcon.src = "images/Ícones/iconeTemaClaroEscuro.svg";
+                        btnEscuroIcon.src = "images/Ícones/iconeTemaEscuroClaro.svg";
+                    }
+                    mainImg.classList.remove("fadeIn-hide");
+                }, 200);
+            }
+        </script>
+    </div>
 </body>
 </html>
