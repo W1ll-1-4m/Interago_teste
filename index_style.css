@@ -81,7 +81,7 @@ li .nav-link:hover {
     color: black;
 }
 
-li {
+#tela-recursos li {
     list-style: none;
     line-height: 1px;
 }
@@ -287,8 +287,8 @@ li {
 
 /* tela visibilidade */
 #tela-visibilidade {
-    padding: 100px 25px 0px;
-    height: 1080px;  
+    padding: 100px 25px 60px;
+    height: auto;  
     transition: background-color 0.5s, color 0.5s;
 }
 
@@ -346,3 +346,77 @@ li {
     opacity: 0;
 }
 /* fim tela visibilidade */
+
+/* tela acesso rapido */
+#tela-acesso-rapido {
+    padding: 100px 25px 80px;
+    height: auto;  
+    color: black;
+}
+
+#tela-acesso-rapido h4 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+.links-help.btn {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px; 
+    border: 1px solid #cbcbcb; 
+    border-radius: 5px;
+    width: 250px;
+    margin: 5px 10px 5px 0;
+    text-align: start;
+}
+
+.icones-links {
+    display: block;
+    margin-bottom: 2px;
+}
+
+.topic-relev {
+    border-style: solid;
+    border-color: #cbcbcb; 
+    border-width: 0 0 0 1px;
+    padding-left: 60px;
+    width: 300px;
+}
+
+.link-topicos-relev {
+    display: block;
+    color: black;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 500;
+}
+
+.footer {
+    background-image: linear-gradient(to top, #0B1017, #08244A); 
+    height: 100%;
+    border-radius: 30px 30px 0 0;
+    padding: 80px 100px 20px;
+    color: white;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.button-footer {
+    background-image: linear-gradient(to right, #1E71E3, #3897F1);
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+.links-footer {
+    font-size: 13px;
+    font-weight: 300;
+    display: block;
+    margin: 10px 10px 10px 0;
+}

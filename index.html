@@ -16,7 +16,7 @@
 <body>
     <!-- tela inicial -->
     <div class="container-fluid" id="tela-inicial">
-        <div style="position: fixed">
+        <div style="position: fixed; z-index: 1;">
             <!-- Usar offcanvas sidebar? -->
             <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
                 <!-- ícone "hamburguer" para abrir sidebar -->
@@ -44,6 +44,9 @@
         </div>
 
         <!-- Adicionar imagens -->
+         <div>
+            
+         </div>
 
     </div>
     <!-- tela recursos -->
@@ -345,6 +348,73 @@
                 }, 200);
             }
         </script>
+    </div>
+    <!-- tela acesso rapido -->
+    <div class="container-fluid" id="tela-acesso-rapido">
+        <div class="d-flex" style="padding-bottom: 10px">
+            <div style="padding-left: 80px;">
+                <h4>Precisa de ajuda?</h4>
+                <div class="d-flex flex-wrap" style="padding-top: 20px;">
+                    <a href="#" class="links-help btn"><img class="icones-links" style="width: 22px;" src="images/iconesAcessoRapido/iconeDocumentacao.svg">Documentação</a>
+                    <a href="#" class="links-help btn"><img class="icones-links" style="width: 28px;" src="images/iconesAcessoRapido/iconeAgendamento.svg">Agendamento</a>
+                    <a href="#" class="links-help btn"><img class="icones-links" style="width: 18px;" src="images/iconesAcessoRapido/iconePlanosEPrecos.svg">Planos e preços</a>
+                    <a href="#" class="links-help btn"><img class="icones-links" style="width: 18px;" src="images/iconesAcessoRapido/iconeRecursos.svg">Recursos</a>
+                    <a href="#" class="links-help btn"><img class="icones-links" style="width: 18px;" src="images/iconesAcessoRapido/iconeQuestao.svg">Ajuda</a>
+                </div>
+            </div>
+            <div>
+                <div class="topic-relev" style="margin-right: 70px">
+                    <h6 style="font-size: 15px; font-weight: bold"><span><img src="images/iconesAcessoRapido/iconeMaisRelevante.svg"></span> Tópicos mais relevantes</h6>
+                    <ul style="list-style-type: none; margin-top: 30px; padding: 0">
+                        <li style="margin-bottom: 20px"><a class="link-topicos-relev" href="#">Como criar uma conta no Interago</a></li>
+                        <li style="margin-bottom: 20px"><a class="link-topicos-relev" href="#">Como acessar os relatórios de visitas</a></li>
+                        <li style="margin-bottom: 20px"><a class="link-topicos-relev" href="#">Cadastrando seus produtos</a></li>
+                        <li style="margin-bottom: 20px"><a class="link-topicos-relev" href="#">Configurando Mercado Pago</a></li>
+                        <li style="margin-bottom: 20px"><a class="link-topicos-relev" href="#">Configurando Frenet</a></li>
+                        <li style="margin-bottom: 20px"><a class="link-topicos-relev" href="#">Como adicionar contatos para receber relatórios</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer">
+        <div class="row" style="margin-bottom: 200px">
+            <div class="col-7">
+                <div>
+                    <h4 style="line-height: 50px; margin-bottom: 40px; font-size: 33px; font-weight: 600;">Uma plataforma pensada em você. Agende uma demontração.</h4>
+                    <a class="button-footer" href="#">Agendar agora</a>
+                </div>
+            </div>
+            <div class="col-5">
+                <div>
+                    <p style="font-size: 15px; font-weight: 600">Plataforma</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <a class="links-footer" href="#">Inicial</a>
+                            <a class="links-footer" href="#">Agende uma demonstração</a>
+                            <a class="links-footer" href="#">Planos e preços</a>
+                        </div>
+                        <div class="col-6">
+                            <a class="links-footer" href="#">Recursos</a>
+                            <a class="links-footer" href="#">Ajuda</a>
+                            <a class="links-footer" href="#">Agências parceiras</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <br>
+        <div class="d-flex">
+            <p style="font-size: 13px; font-weight: 200;">© 2023 Interago - 
+                Desenvolvimento de websites - Todos os direitos reservados - CNPJ 12.768.802/0001-25
+            </p>
+            <div style="margin-left: auto;">
+                <a href="#"><img src="images/iconesAcessoRapido/iconeInstagram.png"></a>
+                <a href="#"><img src="images/iconesAcessoRapido/iconeLinkedin.png"></a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
