@@ -37,18 +37,50 @@
                 <a href="#" class="btn" style="background-image: none; border-color: white; margin-left: 8px">Suporte</a> 
             </div>
         </div>
-        <div class="text-center" style="margin-top: 130px;">
+        <div class="text-center" style="margin: 130px 0 25px;">
             <h1 class="mx-auto">Plataforma para lojas virtuais, blogs e websites.</h1>
             <p class="mx-auto">Uma plataforma brasileira que reúne recursos de ponta para amplificar seu negócio na internet</p>
             <a href="#" class="btn" style="padding: 10px 10px; border-radius: 28px">Agendar demonstração</a>
         </div>
-
+        
         <!-- Adicionar imagens -->
-         <div>
-            
-         </div>
+        <div class="position-relative">
+            <div class="position-absolute w-100" style="padding-top: 30px">
+                <img id="imgRelatorioVendas" class="img-relatorio position-absolute" src="images/imagemRelatorioVendas.png">
+                <img id="imgRelatorioVisitas" class="img-relatorio position-absolute" src="images/imagemRelatorioVisitas.png">
+            </div>
+            <div id="contTelaInicio">
+                <img id="imgTelaInicio" src="images/inicial-interago.png"> 
+            </div>    
+        </div>   
+        
+        <script>
+            window.addEventListener('scroll', () => {
+                let scrollPosition = window.scrollY;
+                let moveDistanceX = scrollPosition * 0.07; 
+                let moveDistanceY = scrollPosition * 0.09; 
+                let rotationX = scrollPosition * 0.02; 
+                let initialX = 15;
+                let initialWidth = 250;
+                const imgVendas = document.getElementById('imgRelatorioVendas');
+                const imgRelatorio = document.getElementById('imgRelatorioVisitas');
+                const imgTela = document.getElementById('imgTelaInicio');
+                const contImgTela = document.getElementById('contTelaInicio');
 
+                imgVendas.style.transform = `translate3d(${moveDistanceX}px, ${moveDistanceY}px, 0)`;
+                imgRelatorio.style.transform = `translate3d(${-moveDistanceX}px, ${moveDistanceY}px, 0)`;
+                contImgTela.style.maxHeight = `${initialWidth + scrollPosition * 0.2}px`;
+
+
+                if (initialX - rotationX > 0){
+                    imgTela.style.transform = `rotateX(${initialX - rotationX}deg)`;
+                } else {
+                    imgTela.style.transform = `rotateX(0deg)`;  
+                }  
+            })
+        </script>
     </div>
+
     <!-- tela recursos -->
     <div class="container-fluid" id="tela-recursos">
         <div class="d-flex w-100">
