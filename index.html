@@ -28,13 +28,13 @@
             </button>  
         </div>
         <div class="row justify-content-center">
-            <div class="col-4"></div>
+            <div class="col-3 col-sm-4"></div>
             <div class="col-4 text-center">
                 <img src="/images/interago_novo_logo.svg#svgView(viewBox(220, 470, 200, 200))" height="45px" width="145px">
             </div>
-            <div class="col-4 text-end">
+            <div class="col-5 col-sm-4 text-end">
                 <a href="#" class="btn">Acesse sua conta</a>
-                <a href="#" class="btn" style="background-image: none; border-color: white; margin-left: 8px">Suporte</a> 
+                <a id="button-suporte" href="#" class="btn" style="background-image: none; border-color: white; margin-left: 8px">Suporte</a> 
             </div>
         </div>
         <div class="text-center" style="margin: 130px 0 25px;">
@@ -44,7 +44,7 @@
         </div>
         
         <!-- Adicionar imagens -->
-        <div class="position-relative">
+        <div class="position-relative" id="images-inicio">
             <div class="position-absolute w-100" style="padding-top: 30px">
                 <img id="imgRelatorioVendas" class="img-relatorio position-absolute" src="images/imagemRelatorioVendas.png">
                 <img id="imgRelatorioVisitas" class="img-relatorio position-absolute" src="images/imagemRelatorioVisitas.png">
@@ -54,39 +54,55 @@
             </div>    
         </div>   
         
+        <!-- script animação imagens -->
         <script>
             window.addEventListener('scroll', () => {
-                let scrollPosition = window.scrollY;
-                let moveDistanceX = scrollPosition * 0.07; 
-                let moveDistanceY = scrollPosition * 0.09; 
-                let rotationX = scrollPosition * 0.02; 
-                let initialX = 15;
-                let initialWidth = 250;
-                const imgVendas = document.getElementById('imgRelatorioVendas');
-                const imgRelatorio = document.getElementById('imgRelatorioVisitas');
-                const imgTela = document.getElementById('imgTelaInicio');
-                const contImgTela = document.getElementById('contTelaInicio');
+                let containerTela = document.getElementById('images-inicio');
+                
+                if (containerTela.style.display !== "none") {
 
-                imgVendas.style.transform = `translate3d(${moveDistanceX}px, ${moveDistanceY}px, 0)`;
-                imgRelatorio.style.transform = `translate3d(${-moveDistanceX}px, ${moveDistanceY}px, 0)`;
-                contImgTela.style.maxHeight = `${initialWidth + scrollPosition * 0.2}px`;
+                    let scrollPosition = window.scrollY;
+                    let moveDistanceX = scrollPosition * 0.07; 
+                    let moveDistanceY = scrollPosition * 0.15; 
+                    let rotationX = scrollPosition * 0.02; 
+                    let initialX = 15;
+                    let initialWidth = 250;
+                    const imgVendas = document.getElementById('imgRelatorioVendas');
+                    const imgRelatorio = document.getElementById('imgRelatorioVisitas');
+                    const imgTela = document.getElementById('imgTelaInicio');
+                    const contImgTela = document.getElementById('contTelaInicio');
 
+                    imgVendas.style.transform = `translate3d(${moveDistanceX}px, ${moveDistanceY}px, 0)`;
+                    imgRelatorio.style.transform = `translate3d(${-moveDistanceX}px, ${moveDistanceY}px, 0)`;
+                    contImgTela.style.maxHeight = `${initialWidth + scrollPosition * 0.25}px`;
 
-                if (initialX - rotationX > 0){
-                    imgTela.style.transform = `rotateX(${initialX - rotationX}deg)`;
-                } else {
-                    imgTela.style.transform = `rotateX(0deg)`;  
+                    if (initialX - rotationX > 0){
+                        imgTela.style.transform = `rotateX(${initialX - rotationX}deg)`;
+                    } else {
+                        imgTela.style.transform = `rotateX(0deg)`;  
+                    }  
                 }  
             })
+                
         </script>
     </div>
 
     <!-- tela recursos -->
     <div class="container-fluid" id="tela-recursos">
-        <div class="d-flex w-100">
-            <!-- navbar -->
-            <div style="max-width: 15%; align-self: center;">
-                <ul class="navbar-nav" role="tablist">
+        <div class="row w-100 d-flex align-items-center">
+            <!-- navbar vertical -->
+            <div class="col-lg-3 d-flex justify-content-center">
+                <ul id="timeline-vertical" class="nav nav-tabs flex-column" role="tablist">
+                    <li class="nav-item"><div class="node ativo nav-item"></div><a id="link-1" class="nav-link active" href="#solicitar-site" data-bs-toggle="tab">1. Solicite seu site</a></li>
+                    <li class="nav-item"><div class="divider inativo"></div></li>
+                    <li class="nav-item"><div class="node inativo"></div><a id="link-2" class="nav-link" href="#venda-online" data-bs-toggle="tab">2. Venda online</a></li>
+                    <li class="nav-item"><div class="divider inativo"></div></li>
+                    <li class="nav-item"><div class="node inativo"></div><a id="link-3" class="nav-link" href="#gerencie" data-bs-toggle="tab">3. Gerencie</a></li>
+                    <li class="nav-item"><div class="divider inativo"></div></li>
+                    <li class="nav-item"><div class="node inativo"></div><a id="link-4" class="nav-link" href="#obter-result" data-bs-toggle="tab">4. Obtenha resultados</a></li>
+                </ul>
+
+                <ul id="timeline-horizontal" class="nav nav-tabs flex-row" role="tablist">
                     <li><div class="node ativo nav-item"></div><a id="link-1" class="nav-link active" href="#solicitar-site" data-bs-toggle="tab">1. Solicite seu site</a></li>
                     <li><div class="divider inativo"></div></li>
                     <li><div class="node inativo"></div><a id="link-2" class="nav-link" href="#venda-online" data-bs-toggle="tab">2. Venda online</a></li>
@@ -96,7 +112,7 @@
                     <li><div class="node inativo"></div><a id="link-4" class="nav-link" href="#obter-result" data-bs-toggle="tab">4. Obtenha resultados</a></li>
                 </ul>
             </div>
-            
+
             <!-- Script navbar -->
             <script>
                 const navLinks = document.querySelectorAll(".nav-link");
@@ -126,10 +142,10 @@
             </script>
 
             <!-- Conteúdo das abas -->
-            <div class="tab-content position-relative" style="max-width: 85%;">
+            <div class="tab-content position-relative col-lg-9">
                 <!-- tab 1 -->
                 <div class="tab-pane show d-flex fade w-100" id="solicitar-site">
-                    <div class="tab-text">
+                    <div class="col-lg-5 tab-text">
                         <h2>Dê o primeiro passo para elevar seu negócio para o próximo nível com a internet</h2>
                         <p>
                             Com um ambiente desenvolvido para atender diferentes categorias de sites, 
@@ -138,7 +154,7 @@
                         </p>
                         <a href="#" class="btn">Começar agora</a>
                     </div>
-                    <div class="tab-image">
+                    <div class="col-lg-7 tab-image">
                         <img src="images/inicial-interago.png" alt="imagem" style="width: 100%; height: auto;">
                     </div>
                 </div>
@@ -347,6 +363,7 @@
         <div style="padding: 20px 40px">
             <img id="mainImg" class="w-100 fadeIn-transition" src="images/tema_claro.png">
         </div>
+
         <!-- script para alterar tema -->
         <script>
             function toggleTheme(theme) {
@@ -380,6 +397,7 @@
                 }, 200);
             }
         </script>
+
     </div>
     <!-- tela acesso rapido -->
     <div class="container-fluid" id="tela-acesso-rapido">
@@ -410,7 +428,7 @@
         </div>
     </div>
     <!-- Footer -->
-    <div class="footer">
+    <div class="footer mx-5">
         <div class="row" style="margin-bottom: 200px">
             <div class="col-7">
                 <div>
