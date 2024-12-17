@@ -272,12 +272,17 @@ li .nav-link.active {
 }
 
 .integracoes {
-    padding: 25px;
-    margin: 0 25px;
-    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
     background-color: white;
-    width: 350px;
-    box-shadow: 0 0 20px rgb(197, 197, 197); 
+    box-shadow: 0 0 10px rgb(197, 197, 197);
 }
 
 .integracoes p {
@@ -287,8 +292,48 @@ li .nav-link.active {
 
 .integracoes img {
     margin-bottom: 20px;
-    width: 235px;
+    width: 60%;
 }
+
+@media only screen and (max-width: 992px) {
+    .integracoes {
+        height: 300px;
+    }
+    #tela-integracao h2 {
+        font-size: 30px; 
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .integracoes img {
+        width: 70%;
+    }
+    #tela-integracao h2 {
+        /* font-size: 25px;  */
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .integracoes img {
+        width: 85%;
+    }
+}
+
+/* .colunas-int-1 {
+    background-color: #1E71E3;
+}
+.colunas-int-2 {
+    background-color: #003c5f;
+}
+.colunas-int-3 {
+    background-color: aquamarine;
+}
+.colunas-int-4 {
+    background-color: red;
+}
+.colunas-int-5 {
+    background-color: yellow;
+} */
 /* fim tela integração */
 
 /* tela webvitals */
