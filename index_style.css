@@ -259,7 +259,7 @@ li .nav-link.active {
 /* tela integração */
 #tela-integracao {
     background-color: #e9e9e9;
-    padding: 100px 50px;
+    padding: 100px 25px;
     height: 100%;
 }
 
@@ -276,10 +276,10 @@ li .nav-link.active {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 5px;
-    margin-bottom: 20px;
-    width: 100%;
-    height: 200px;
+    padding: 20px 30px;
+    /* margin: 0 10px 20px 10px; */
+    width: 300px;
+    height: 250px;
     border-radius: 10px;
     background-color: white;
     box-shadow: 0 0 10px rgb(197, 197, 197);
@@ -295,45 +295,39 @@ li .nav-link.active {
     width: 60%;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 600px) {
     .integracoes {
-        height: 300px;
+        height: 20em;
+        margin: 10px 3px;
+        width: 200px
     }
-    #tela-integracao h2 {
-        font-size: 30px; 
-    }
-}
-
-@media only screen and (max-width: 768px) {
     .integracoes img {
-        width: 70%;
-    }
-    #tela-integracao h2 {
-        /* font-size: 25px;  */
+        width: 200px
     }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 600px) {
+    .integracoes {
+        height: 20em;
+        margin: 10px 3px;
+        width:260px
+    }
     .integracoes img {
-        width: 85%;
+        width: 250px
     }
 }
 
-/* .colunas-int-1 {
-    background-color: #1E71E3;
+@media only screen and (min-width: 768px) {
+    .integracoes {
+        height: 20em;
+        margin: 10px 3px;
+        width:450px
+    }
+    .integracoes img {
+        width: 250px
+    }
 }
-.colunas-int-2 {
-    background-color: #003c5f;
-}
-.colunas-int-3 {
-    background-color: aquamarine;
-}
-.colunas-int-4 {
-    background-color: red;
-}
-.colunas-int-5 {
-    background-color: yellow;
-} */
+
 /* fim tela integração */
 
 /* tela webvitals */
@@ -345,7 +339,7 @@ li .nav-link.active {
 }
 
 .info-infra {
-    padding: 50px 100px;
+    padding: 50px 50px;
     border-radius: 15px;
     border: 1px solid #30313c;
 }
@@ -356,23 +350,25 @@ li .nav-link.active {
 
 .info-infra p {
     font-weight: 300;
-    font-size: 13px;
+    font-size: 15px;
     margin: 0;
 }
 
 .webvitals {
     margin: 70px 70px 0;
+    padding: 70px 25px;
 }
 
 .webvitals h4 {
-    font-size: 15px;
-    margin-bottom: 15px;
+    font-size: 1.1em;
+    font-weight: 700;
+    margin-bottom:15px;
 }
 
 .webvitals p {
-    font-size: 11px;
-    font-weight: 300;
-    line-height: 18px;
+    font-size: 0.9em;
+    font-weight: 500;
+    line-height: 25px;
 }
 
 /* infinite carousel */
@@ -571,11 +567,88 @@ li .nav-link.active {
     background-image: linear-gradient(to right, #1E71E3, #3897F1);
     border-radius: 25px;
     padding: 10px 20px;
+    margin-bottom: 10px;
 }
 
 .links-footer {
     font-size: 13px;
     font-weight: 300;
     display: block;
-    margin: 10px 10px 10px 0;
+    margin: 15px 10px 0 0;
+}
+
+.footer h4 {
+    line-height: 50px; 
+    margin-bottom: 40px; 
+    font-size: 33px; 
+    font-weight: 600;
+}
+
+.hor-rule-footer {
+    padding-bottom: 10px;
+}
+
+@media only screen and (max-width: 599px) {
+    .footer {
+        padding: 80px 50px 20px; 
+    }
+    .footer h4 {
+        line-height: 30px; 
+        margin-bottom: 40px; 
+        font-size: 1.5em; 
+        font-weight: 600;
+    }
+    .hor-rule-footer {
+        display: block;
+    }
+    .topic-relev {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .footer {
+        padding: 80px 50px 20px; 
+    }
+    .footer h4 {
+        line-height: 30px; 
+        margin-bottom: 40px; 
+        font-size: 1.5em; 
+        font-weight: 600;
+    }
+    .topic-relev {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .footer h4 {
+        line-height: 50px; 
+        margin-bottom: 40px; 
+        font-size: 33px; 
+        font-weight: 600;
+    }
+    
+    .hor-rule-footer {
+        display: block;
+    }
+    .topic-relev {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .footer {
+        padding: 80px 100px 20px;
+    }
+    .footer h4 {
+        line-height: 50px; 
+        margin-bottom: 40px; 
+        font-size: 33px; 
+        font-weight: 600;
+    }
+    
+    .hor-rule-footer {
+        display: none;
+    }
 }
