@@ -16,9 +16,9 @@
 <body>
     <!-- tela inicial -->
     <div class="container-fluid position-relative" id="tela-inicial">
-        <div style="position: fixed;">
+        <div style="position: fixed; z-index: 5">
             <!-- Usar offcanvas sidebar? -->
-            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
+            <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#modalMenu">
                 <!-- ícone "hamburguer" para abrir sidebar -->
                 <svg width="25" height="19" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <line y1="1.5" x2="29" y2="1.5" stroke="white" stroke-width="3"/>
@@ -27,13 +27,50 @@
                 </svg>
             </button>  
         </div>
+
+        <!-- Modal -->
+        <div id="modalMenu" class="modal">
+            <div class="modal-dialog modal-fullscreen"> 
+                <div class="modal-content">
+                    <div class="modal-header" style="border: 0;">
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body row">
+                        <div class="col-lg-7 my-auto">
+                            <a class="link-modal-g" href="#">Inicial</a><br>
+                            <a class="link-modal-g" href="#">Recursos</a><br>
+                            <a class="link-modal-g" style="margin-bottom: 50px" href="#">Planos e preços</a> 
+                        </div>
+                        <div class="col-lg-5 my-auto">
+                            <div class="row" style="padding-bottom: 50px;">
+                                <div class="col-lg-6" style="padding-bottom: 40px;">
+                                    <p>POLÍTICAS</p>
+                                    <a class="link-modal-p" href="#">Políticas de privacidade</a><br>
+                                    <a class="link-modal-p" href="#">Termos e condições de uso</a><br>
+                                </div>
+                                <div class="col-lg-6">
+                                    <p>LINKS ÚTEIS</p>
+                                    <a class="link-modal-p" href="#">Ajuda</a><br>
+                                    <a class="link-modal-p" href="#">Agendar demonstração</a><br>
+                                </div>
+                            </div>
+                            <p>
+                                © 2024 Interago - Plataforma de Experiência Digital -
+                                 Todos os direitos reservados - CNPJ 12.768.802/0001-25.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row justify-content-center">
             <div class="col-3 col-sm-4"></div>
             <div class="col-4 text-center">
                 <img src="/images/interago_novo_logo.svg#svgView(viewBox(220, 470, 200, 200))" height="45px" width="145px">
             </div>
             <div class="col-5 col-sm-4 text-end">
-                <a href="#" class="btn">Acesse sua conta</a>
+                <a id="button-login" href="#" class="btn">Acesse sua conta</a>
                 <a id="button-suporte" href="#" class="btn" style="background-image: none; border-color: white; margin-left: 8px">Suporte</a> 
             </div>
         </div>
@@ -439,21 +476,27 @@
     </div>
     <!-- tela acesso rapido -->
     <div class="container-fluid" id="tela-acesso-rapido">
-        <div class="d-flex" style="padding-bottom: 10px">
-            <div style="padding-left: 80px;">
-                <h4>Precisa de ajuda?</h4>
-                <div class="d-flex flex-wrap" style="padding-top: 20px;">
-                    <a href="#" class="links-help btn"><img class="icones-links" style="width: 22px;" src="images/iconesAcessoRapido/iconeDocumentacao.svg">Documentação</a>
-                    <a href="#" class="links-help btn"><img class="icones-links" style="width: 28px;" src="images/iconesAcessoRapido/iconeAgendamento.svg">Agendamento</a>
-                    <a href="#" class="links-help btn"><img class="icones-links" style="width: 18px;" src="images/iconesAcessoRapido/iconePlanosEPrecos.svg">Planos e preços</a>
-                    <a href="#" class="links-help btn"><img class="icones-links" style="width: 18px;" src="images/iconesAcessoRapido/iconeRecursos.svg">Recursos</a>
-                    <a href="#" class="links-help btn"><img class="icones-links" style="width: 18px;" src="images/iconesAcessoRapido/iconeQuestao.svg">Ajuda</a>
+        <div class="row align-items-center" style="padding-bottom: 10px">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-7">
+                <div class="help-section">
+                    <h4>Precisa de ajuda?</h4>
+                    <div class="d-flex flex-wrap flex cont-link-help" style="padding-top: 20px;">
+                        <a href="#" class="links-help btn"><img class="icones-links" style="width: 22px;" src="images/iconesAcessoRapido/iconeDocumentacao.svg">Documentação</a>
+                        <a href="#" class="links-help btn"><img class="icones-links" style="width: 28px;" src="images/iconesAcessoRapido/iconeAgendamento.svg">Agendamento</a>
+                        <a href="#" class="links-help btn"><img class="icones-links" style="width: 18px;" src="images/iconesAcessoRapido/iconePlanosEPrecos.svg">Planos e preços</a>
+                        <a href="#" class="links-help btn"><img class="icones-links" style="width: 18px;" src="images/iconesAcessoRapido/iconeRecursos.svg">Recursos</a>
+                        <a href="#" class="links-help btn"><img class="icones-links" style="width: 18px;" src="images/iconesAcessoRapido/iconeQuestao.svg">Ajuda</a>
+                    </div>
                 </div>
             </div>
-            <div>
-                <div class="topic-relev" style="margin-right: 70px">
-                    <h6 style="font-size: 15px; font-weight: bold"><span><img src="images/iconesAcessoRapido/iconeMaisRelevante.svg"></span> Tópicos mais relevantes</h6>
-                    <ul style="list-style-type: none; margin-top: 30px; padding: 0">
+            <div class="hor-acesso-rapido">
+                <hr>
+            </div>
+            <div class="col-lg-4">
+                <div class="topic-relev">
+                    <h6 class="title-top-relev"><span><img src="images/iconesAcessoRapido/iconeMaisRelevante.svg"></span> Tópicos mais relevantes</h6>
+                    <ul style="list-style-type: none; margin-top: 20px; padding: 0">
                         <li style="margin-bottom: 20px"><a class="link-topicos-relev" href="#">Como criar uma conta no Interago</a></li>
                         <li style="margin-bottom: 20px"><a class="link-topicos-relev" href="#">Como acessar os relatórios de visitas</a></li>
                         <li style="margin-bottom: 20px"><a class="link-topicos-relev" href="#">Cadastrando seus produtos</a></li>

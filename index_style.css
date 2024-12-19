@@ -9,6 +9,48 @@ body {
     }
    }
 
+.modal-content {
+    background-image: linear-gradient(to bottom, #000000, #000f21);
+    padding: 20px;
+}
+
+.modal-content a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.link-modal-g {
+    color: white;
+    font-size: 4.5em;
+    transition: transform 0.2s linear;
+}
+
+.link-modal-g:hover {
+    color: #1e71e3;
+    transform: translateX(10px);
+}
+
+.link-modal-p {
+    color: white;
+    font-size: 1.4em;
+    transition: transform 0.2s linear;
+    margin-bottom: 15px
+}
+
+.link-modal-p:hover {
+    color: #1e71e3;
+    transform: translateX(10px);
+}
+
+@media only screen and (max-width: 992px) {
+    .link-modal-g {
+        font-size: 2.8em;
+    }
+    .modal-content p {
+        font-size: 1em;
+    }
+}
+   
 #tela-inicial {
     height: 100vh;
     background: radial-gradient(circle farthest-corner at 70% 10%, #0c0f16 23%, #003c5f 50%) top right/200% 200%;
@@ -53,6 +95,12 @@ body {
     }
     #button-suporte {
         display:none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #button-login {
+        max-width: 90px
     }
 }
 
@@ -218,6 +266,9 @@ li .nav-link.active {
     #timeline-nav li {
         line-height: 20px;
     }
+    #timeline-nav .nav-link {
+        font-size: 0.8em
+    }
     .tab-pane {
         padding: 0 2em;
     }
@@ -301,12 +352,12 @@ li .nav-link.active {
 
 @media only screen and (max-width: 600px) {
     .integracoes {
-        height: 20em;
+        height: 21em;
         margin: 10px 3px;
-        width: 200px
+        width: 150px
     }
     .integracoes img {
-        width: 200px
+        width: 150px
     }
 }
 
@@ -506,7 +557,7 @@ li .nav-link.active {
 
 /* tela acesso rapido */
 #tela-acesso-rapido {
-    padding: 100px 25px 80px;
+    padding: 0px 25px 80px;
     height: auto;  
     color: black;
 }
@@ -514,6 +565,15 @@ li .nav-link.active {
 #tela-acesso-rapido h4 {
     font-size: 30px;
     font-weight: bold;
+}
+
+.help-section {
+    padding: 0;
+    text-align: center;
+}
+
+.cont-link-help {
+    justify-content: center;
 }
 
 .links-help.btn {
@@ -538,19 +598,22 @@ li .nav-link.active {
     margin-bottom: 2px;
 }
 
+.title-top-relev {
+    font-size: 1.2em; 
+    font-weight: bold;
+}
+
 .topic-relev {
-    border-style: solid;
-    border-color: #cbcbcb; 
-    border-width: 0 0 0 1px;
-    padding-left: 60px;
-    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .link-topicos-relev {
     display: block;
     color: black;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 1em;
+    line-height: 30px;
     font-weight: 500;
 }
 
@@ -592,7 +655,11 @@ li .nav-link.active {
     padding-bottom: 10px;
 }
 
-@media only screen and (max-width: 599px) {
+.hor-acesso-rapido {
+    padding: 20px 0;
+}
+
+@media only screen and (max-width: 768px) {
     .footer {
         padding: 80px 50px 20px; 
     }
@@ -605,23 +672,12 @@ li .nav-link.active {
     .hor-rule-footer {
         display: block;
     }
-    .topic-relev {
-        display: none;
+    .help-section {
+        padding: 0;
+        text-align: center;
     }
-}
-
-@media only screen and (min-width: 600px) {
-    .footer {
-        padding: 80px 50px 20px; 
-    }
-    .footer h4 {
-        line-height: 30px; 
-        margin-bottom: 40px; 
-        font-size: 1.5em; 
-        font-weight: 600;
-    }
-    .topic-relev {
-        display: none;
+    .cont-link-help {
+        justify-content: center;
     }
 }
 
@@ -633,12 +689,6 @@ li .nav-link.active {
         font-weight: 600;
     }
     
-    .hor-rule-footer {
-        display: block;
-    }
-    .topic-relev {
-        display: block;
-    }
 }
 
 @media only screen and (min-width: 992px) {
@@ -654,5 +704,30 @@ li .nav-link.active {
     
     .hor-rule-footer {
         display: none;
+    }
+
+    .hor-acesso-rapido {
+        display: none;
+    }
+    .topic-relev {
+        align-items: start;
+        text-align: start;
+        border-style: solid;
+        border-color: #cbcbcb; 
+        border-width: 0 0 0 1px;
+        padding-left: 60px;
+    }
+    .help-section {
+        padding: 80px;
+        text-align: left;
+    }
+    .cont-link-help {
+        justify-content: start;
+    }
+    .title-top-relev {
+        font-size: 1em; 
+    }
+    .link-topicos-relev {
+        font-size: 0.8em;
     }
 }
