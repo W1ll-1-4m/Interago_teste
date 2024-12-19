@@ -111,13 +111,13 @@ body {
 
 #imgRelatorioVendas {
     left: 0;
-    top: 0;
+    bottom: 40%;
     transition: transform 0.7s ease-out;
 }
 
 #imgRelatorioVisitas {
     right: 0;
-    top: 0;
+    bottom: 40%;
     transition: transform 0.7s ease-out;
 }
 

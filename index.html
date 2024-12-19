@@ -82,10 +82,8 @@
         
         <!-- Adicionar imagens -->
         <div class="position-relative" id="images-inicio">
-            <div class="position-absolute w-100" style="padding-top: 20px">
-                <img id="imgRelatorioVendas" class="img-relatorio position-absolute" src="images/imagemRelatorioVendas.png">
-                <img id="imgRelatorioVisitas" class="img-relatorio position-absolute" src="images/imagemRelatorioVisitas.png">
-            </div>
+            <img id="imgRelatorioVendas" class="img-relatorio position-absolute" src="images/imagemRelatorioVendas.png">
+            <img id="imgRelatorioVisitas" class="img-relatorio position-absolute" src="images/imagemRelatorioVisitas.png">
             <div id="contTelaInicio">
                 <img id="imgTelaInicio" src="images/inicial-interago.png"> 
             </div>    
@@ -96,7 +94,7 @@
             function handleScroll() {
                 const scrollPosition = window.scrollY;
                 const moveDistanceRelX = scrollPosition * 0.05;
-                const moveDistanceRelY = scrollPosition * 0.05;
+                const moveDistanceRelY = scrollPosition * 0.15;
                 const moveDistanceTelaY = scrollPosition * 0.15;
                 const rotationX = scrollPosition * 0.02;
                 const initialX = 15;
