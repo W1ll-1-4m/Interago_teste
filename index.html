@@ -15,8 +15,8 @@
 </head>
 <body>
     <!-- tela inicial -->
-    <div class="container-fluid" id="tela-inicial">
-        <div style="position: fixed; z-index: 1;">
+    <div class="container-fluid position-relative" id="tela-inicial">
+        <div style="position: fixed;">
             <!-- Usar offcanvas sidebar? -->
             <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar">
                 <!-- ícone "hamburguer" para abrir sidebar -->
@@ -37,7 +37,7 @@
                 <a id="button-suporte" href="#" class="btn" style="background-image: none; border-color: white; margin-left: 8px">Suporte</a> 
             </div>
         </div>
-        <div class="text-center" style="margin: 130px 0 25px;">
+        <div id="containerTextoInicio" class="text-center" style="margin: 130px 0 25px;">
             <h1 class="mx-auto">Plataforma para lojas virtuais, blogs e websites.</h1>
             <p class="mx-auto">Uma plataforma brasileira que reúne recursos de ponta para amplificar seu negócio na internet</p>
             <a href="#" class="btn" style="padding: 10px 10px; border-radius: 28px">Agendar demonstração</a>
@@ -55,37 +55,50 @@
         </div>   
         
         <!-- script animação imagens -->
-        <script>
-            window.addEventListener('scroll', () => {
-                let containerTela = document.getElementById('images-inicio');
-                
-                if (containerTela.style.display !== "none") {
+        <script>        
+            function handleScroll() {
+                const scrollPosition = window.scrollY;
+                const moveDistanceRelX = scrollPosition * 0.05;
+                const moveDistanceRelY = scrollPosition * 0.05;
+                const moveDistanceTelaY = scrollPosition * 0.15;
+                const rotationX = scrollPosition * 0.02;
+                const initialX = 15;
+                const margemInic = 130;
 
-                    let scrollPosition = window.scrollY;
-                    let moveDistanceX = scrollPosition * 0.05; 
-                    let moveDistanceY = scrollPosition * 0; 
-                    let rotationX = scrollPosition * 0.02; 
-                    let initialX = 15;
-                    const imgVendas = document.getElementById('imgRelatorioVendas');
-                    const imgRelatorio = document.getElementById('imgRelatorioVisitas');
-                    const imgTela = document.getElementById('imgTelaInicio');
+                const imgVendas = document.getElementById('imgRelatorioVendas');
+                const imgRelatorio = document.getElementById('imgRelatorioVisitas');
+                const imgTela = document.getElementById('imgTelaInicio');
+                const contTexto = document.getElementById('containerTextoInicio');
+                // console.log('SCRIPT RODANDO');
 
-                    imgVendas.style.transform = `translate3d(${moveDistanceX}px, ${moveDistanceY}px, 0)`;
-                    imgRelatorio.style.transform = `translate3d(${-moveDistanceX}px, ${moveDistanceY}px, 0)`;
+                imgVendas.style.transform = `translate3d(${moveDistanceRelX}px, ${moveDistanceRelY}px, 0)`;
+                imgRelatorio.style.transform = `translate3d(${-moveDistanceRelX}px, ${moveDistanceRelY}px, 0)`;
+                contTexto.style.marginTop = `${margemInic - scrollPosition * 0.3}px`;
 
-                    if (initialX - rotationX > 0){
-                        imgTela.style.transform = `translateY(${-scrollPosition * 0.5}px) rotateX(${initialX - rotationX}deg)`;
-                    } else {
-                        imgTela.style.transform = `translateY(${-scrollPosition * 0.5}px) rotateX(0deg)`;  
-                    }  
-                }  
-            })
-                
+                if (initialX - rotationX > 0) {
+                    imgTela.style.transform = `translateY(${-moveDistanceTelaY}px) rotateX(${initialX - rotationX}deg)`;
+                } else {
+                    imgTela.style.transform = `translateY(${-moveDistanceTelaY}px) rotateX(0deg)`;
+                }
+            }
+
+            function handleResize() {
+                const displayStyle = window.getComputedStyle(document.getElementById('images-inicio')).display;
+                if (displayStyle !== 'none') {
+                    window.addEventListener('scroll', handleScroll);
+                } else {
+                    window.removeEventListener('scroll', handleScroll);
+                }
+            }
+
+            handleResize();
+
+            window.addEventListener('resize', handleResize);
         </script>
     </div>
 
     <!-- tela recursos -->
-    <div class="container-fluid" id="tela-recursos">
+    <div class="container-fluid position-relative" id="tela-recursos">
         <div class="row w-100 d-flex align-items-center">
             <!-- navbar vertical -->
             <div id="div-nav" class="col-lg-3 d-flex justify-content-center">
@@ -243,6 +256,7 @@
             </div>    
         </div>
     </div>
+
     <!-- tela integrações -->
     <div class="container-fluid" id="tela-integracao">
         <div class="d-flex justify-content-center">
@@ -285,6 +299,7 @@
             </div>
         </div>
     </div>
+
     <!-- tela webvitals -->
     <div class="container-fluid" id="tela-webvitals">
         <div class="info-infra row align-items-center">
@@ -313,7 +328,7 @@
             <h2 class="text-center" style="font-weight: bold; font-size: 40px; max-width: 700px; margin: auto;">Tenha seu site otimizado nas pesquisas do Google</h2>
             <div class="row webvitals justify-content-center">
                 <div class="col-lg-4">
-                    <div class="d-flex item-webvital mx-auto" style="margin-bottom: 30px">
+                    <div class="d-flex mx-auto" style="margin-bottom: 30px">
                         <img src="images/Ícones/iconeExpUser.svg" style="width: 70px; margin-right: 20px; align-self: flex-start">
                         <div class="column">
                             <h4>Experiência do usuário</h4>
@@ -324,7 +339,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="d-flex item-webvital mx-auto" style="margin-bottom: 10px">
+                    <div class="d-flex mx-auto" style="margin-bottom: 30px">
                         <img src="images/Ícones/iconePageSpeed.svg" style="width: 70px; margin-right: 20px; align-self: flex-start">
                         <div class="column">
                             <h4>PageSpeed Insights</h4>
@@ -336,7 +351,7 @@
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="d-flex item-webvital mx-auto" style="margin-bottom: 10px">
+                    <div class="d-flex mx-auto" style="margin-bottom: 30px">
                         <img src="images/Ícones/iconeMetadados.svg" style="width: 70px; margin-right: 20px; align-self: flex-start">
                         <div class="column">
                             <h4>Metadados Estruturados</h4>

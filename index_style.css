@@ -1,5 +1,5 @@
 body {
-    font-family: "Raleway", sans-serif !important
+    font-family: "Raleway", sans-serif !important;
 }
 
 /* tela-inicial */
@@ -10,7 +10,7 @@ body {
    }
 
 #tela-inicial {
-    height: 100%;
+    height: 100vh;
     background: radial-gradient(circle farthest-corner at 70% 10%, #0c0f16 23%, #003c5f 50%) top right/200% 200%;
     color: white;
     padding: 30px 25px 0px;
@@ -63,17 +63,19 @@ body {
 
 #imgRelatorioVendas {
     left: 0;
+    top: 0;
     transition: transform 0.7s ease-out;
 }
 
 #imgRelatorioVisitas {
     right: 0;
+    top: 0;
     transition: transform 0.7s ease-out;
 }
 
 #contTelaInicio {
     height: 300px; 
-    overflow: hidden; 
+    /* overflow: hidden;  */
     perspective: 1000px;
     position: relative;
 }
@@ -92,6 +94,7 @@ body {
     padding: 50px 25px;
     height: 100%;
     color: #1A1A1A;
+    background-color: white;
 }
 
 #tela-recursos .btn {
