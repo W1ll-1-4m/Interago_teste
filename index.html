@@ -45,7 +45,7 @@
         
         <!-- Adicionar imagens -->
         <div class="position-relative" id="images-inicio">
-            <div class="position-absolute w-100" style="padding-top: 30px">
+            <div class="position-absolute w-100" style="padding-top: 20px">
                 <img id="imgRelatorioVendas" class="img-relatorio position-absolute" src="images/imagemRelatorioVendas.png">
                 <img id="imgRelatorioVisitas" class="img-relatorio position-absolute" src="images/imagemRelatorioVisitas.png">
             </div>
@@ -62,24 +62,21 @@
                 if (containerTela.style.display !== "none") {
 
                     let scrollPosition = window.scrollY;
-                    let moveDistanceX = scrollPosition * 0.07; 
-                    let moveDistanceY = scrollPosition * 0.15; 
+                    let moveDistanceX = scrollPosition * 0.05; 
+                    let moveDistanceY = scrollPosition * 0; 
                     let rotationX = scrollPosition * 0.02; 
                     let initialX = 15;
-                    let initialWidth = 250;
                     const imgVendas = document.getElementById('imgRelatorioVendas');
                     const imgRelatorio = document.getElementById('imgRelatorioVisitas');
                     const imgTela = document.getElementById('imgTelaInicio');
-                    const contImgTela = document.getElementById('contTelaInicio');
 
                     imgVendas.style.transform = `translate3d(${moveDistanceX}px, ${moveDistanceY}px, 0)`;
                     imgRelatorio.style.transform = `translate3d(${-moveDistanceX}px, ${moveDistanceY}px, 0)`;
-                    contImgTela.style.maxHeight = `${initialWidth + scrollPosition * 0.25}px`;
 
                     if (initialX - rotationX > 0){
-                        imgTela.style.transform = `rotateX(${initialX - rotationX}deg)`;
+                        imgTela.style.transform = `translateY(${-scrollPosition * 0.5}px) rotateX(${initialX - rotationX}deg)`;
                     } else {
-                        imgTela.style.transform = `rotateX(0deg)`;  
+                        imgTela.style.transform = `translateY(${-scrollPosition * 0.5}px) rotateX(0deg)`;  
                     }  
                 }  
             })
