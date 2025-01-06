@@ -23,9 +23,9 @@ body {
     right:0; 
     background-color: transparent;
     padding: 10px 25px 5px;
-    transition: background-color 0.5 linear;
+    transition: background-color 0.5s linear, opacity 0.2s linear;
 }
-   
+
 .modal-content {
     background-image: linear-gradient(to bottom, #000000, #000f21);
     padding: 20px;

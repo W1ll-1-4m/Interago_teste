@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- link para uso do lenis smooth scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
     <title>Teste_Interago</title>
 </head>
 <body>
@@ -36,21 +38,52 @@
             </div>
         </div>
 
+        <!-- script de comportamento do fixedheader (desaparecer quando scrollar para baixo, alterar cor de fundo dependendo da posição) -->
         <script>
-            document.addEventListener('scroll', () => {
+            const body = document.body;
+            const scrollUp = "scroll-up";
+            const scrollDown = "scroll-down";
+            let lastScroll = 0;
+            const fixedHeader = document.getElementById("fixedHeader");
+
+            window.addEventListener("scroll" , () => {
+                const currentScroll = window.pageYOffset;
                 const scrollPosition = window.scrollY;
-                const fixedHead = document.getElementById('fixedHeader');
-                console.log (scrollPosition)
+
                 if (scrollPosition == 0) {
-                    fixedHead.style.backgroundColor = "transparent";
+                    fixedHeader.style.backgroundColor = "transparent";
                 } else {
-                    fixedHead.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+                    fixedHeader.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
                 }
+
+                if (currentScroll <= 0) {
+                    body.classList.remove(scrollUp);
+                    return;
+                }
+
+                if (currentScroll > lastScroll && !body.classList.contains(scrollDown)) {
+                    // down 
+                    body.classList.remove(scrollUp);
+                    body.classList.add(scrollDown);
+                    console.log("scrollando pra baixo");
+                    fixedHeader.style.opacity = "0";
+                    setTimeout(() => {
+                        fixedHeader.style.visibility = "hidden";
+                    }, 200);
+                } else if (currentScroll < lastScroll && body.classList.contains(scrollDown)) {
+                    // up 
+                    body.classList.remove(scrollDown);
+                    body.classList.add(scrollUp);
+                    console.log("scrollando pra cima");
+                    fixedHeader.style.opacity = "1";
+                    fixedHeader.style.visibility = "visible";
+                }
+                lastScroll = currentScroll;
             })
         </script>
 
         <!-- Modal -->
-        <div id="modalMenu" class="modal">
+        <div data-lenis-prevent="" id="modalMenu" class="modal fade"> <!-- data-lenis-prevent para evitar que o lenis quebre o scroll do modal -->
             <div class="modal-dialog modal-fullscreen"> 
                 <div class="modal-content">
                     <div class="modal-header" style="border: 0;">
@@ -570,5 +603,19 @@
             </div>
         </div>
     </div>
+    
+    <!-- scripts para o lenis smooth scroll -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script> 
+    <script>
+        // Initialize Lenis
+        const lenis = new Lenis({
+        autoRaf: true,
+        });
+
+        // // Listen for the scroll event and log the event data
+        // lenis.on('scroll', (e) => {
+        // console.log(e);
+        // });
+    </script>
 </body>
 </html>
