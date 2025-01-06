@@ -14,26 +14,56 @@
     <title>Teste_Interago</title>
 </head>
 <body>
+
     <!-- tela inicial -->
     <div class="container-fluid position-relative" id="tela-inicial">
-        <div style="position: fixed; z-index: 5">
-            <!-- Usar offcanvas sidebar? -->
-            <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#modalMenu">
-                <!-- ícone "hamburguer" para abrir sidebar -->
-                <svg width="25" height="19" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line y1="1.5" x2="29" y2="1.5" stroke="white" stroke-width="3"/>
-                <line y1="11.5" x2="20.7143" y2="11.5" stroke="white" stroke-width="3"/>
-                <line y1="21.5" x2="13.8095" y2="21.5" stroke="white" stroke-width="3"/>
-                </svg>
-            </button>  
+        <div id="fixedHeader" class="row justify-content-center align-items-center w-100" style="margin: 0">
+            <div class="col-3 col-sm-4">
+                <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#modalMenu">
+                    <svg width="25" height="19" viewBox="0 0 29 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line y1="1.5" x2="29" y2="1.5" stroke="white" stroke-width="3"/>
+                    <line y1="11.5" x2="20.7143" y2="11.5" stroke="white" stroke-width="3"/>
+                    <line y1="21.5" x2="13.8095" y2="21.5" stroke="white" stroke-width="3"/>
+                    </svg>
+                </button> 
+            </div>
+            <div class="col-4 text-center">
+                <a href="#"><img src="/images/interago_novo_logo.svg#svgView(viewBox(220, 470, 200, 200))" height="45px" width="145px"></a>
+            </div>
+            <div class="col-5 col-sm-4 text-end">
+                <a id="button-login" href="#" class="btn">Acesse sua conta</a>
+                <a id="button-suporte" href="#" class="btn" style="background-image: none; border-color: white; margin-left: 8px">Suporte</a> 
+            </div>
         </div>
+
+        <script>
+            document.addEventListener('scroll', () => {
+                const scrollPosition = window.scrollY;
+                const fixedHead = document.getElementById('fixedHeader');
+                console.log (scrollPosition)
+                if (scrollPosition == 0) {
+                    fixedHead.style.backgroundColor = "transparent";
+                } else {
+                    fixedHead.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+                }
+            })
+        </script>
 
         <!-- Modal -->
         <div id="modalMenu" class="modal">
             <div class="modal-dialog modal-fullscreen"> 
                 <div class="modal-content">
                     <div class="modal-header" style="border: 0;">
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                        <div class="row justify-content-center w-100">
+                            <div class="col-3 col-sm-4"><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div>
+                            <div class="col-4 text-center">
+                                <img src="/images/interago_novo_logo.svg#svgView(viewBox(220, 470, 200, 200))" height="45px" width="145px">
+                            </div>
+                            <div class="col-5 col-sm-4 text-end">
+                                <a id="button-login" href="#" class="btn">Acesse sua conta</a>
+                                <a id="button-suporte" href="#" class="btn" style="background-image: none; border-color: white; margin-left: 8px">Suporte</a> 
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-body row">
                         <div class="col-lg-7 my-auto">
@@ -54,7 +84,7 @@
                                     <a class="link-modal-p" href="#">Agendar demonstração</a><br>
                                 </div>
                             </div>
-                            <p>
+                            <p style="color: white">
                                 © 2024 Interago - Plataforma de Experiência Digital -
                                  Todos os direitos reservados - CNPJ 12.768.802/0001-25.
                             </p>
@@ -63,17 +93,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="row justify-content-center">
-            <div class="col-3 col-sm-4"></div>
-            <div class="col-4 text-center">
-                <img src="/images/interago_novo_logo.svg#svgView(viewBox(220, 470, 200, 200))" height="45px" width="145px">
-            </div>
-            <div class="col-5 col-sm-4 text-end">
-                <a id="button-login" href="#" class="btn">Acesse sua conta</a>
-                <a id="button-suporte" href="#" class="btn" style="background-image: none; border-color: white; margin-left: 8px">Suporte</a> 
-            </div>
-        </div>
+        
         <div id="containerTextoInicio" class="text-center" style="margin: 130px 0 25px;">
             <h1 class="mx-auto">Plataforma para lojas virtuais, blogs e websites.</h1>
             <p class="mx-auto">Uma plataforma brasileira que reúne recursos de ponta para amplificar seu negócio na internet</p>
@@ -99,16 +119,22 @@
                 const rotationX = scrollPosition * 0.02;
                 const initialX = 15;
                 const margemInic = 130;
+                const margemTexto = margemInic - scrollPosition * 0.3;
 
                 const imgVendas = document.getElementById('imgRelatorioVendas');
                 const imgRelatorio = document.getElementById('imgRelatorioVisitas');
                 const imgTela = document.getElementById('imgTelaInicio');
                 const contTexto = document.getElementById('containerTextoInicio');
-                // console.log('SCRIPT RODANDO');
 
                 imgVendas.style.transform = `translate3d(${moveDistanceRelX}px, ${moveDistanceRelY}px, 0)`;
                 imgRelatorio.style.transform = `translate3d(${-moveDistanceRelX}px, ${moveDistanceRelY}px, 0)`;
-                contTexto.style.marginTop = `${margemInic - scrollPosition * 0.3}px`;
+
+
+                if (margemTexto >= -150) {
+                    contTexto.style.marginTop = `${margemTexto}px`;
+                } else {
+                    contTexto.style.marginTop = `130px`;
+                }
 
                 if (initialX - rotationX > 0) {
                     imgTela.style.transform = `translateY(${-moveDistanceTelaY}px) rotateX(${initialX - rotationX}deg)`;
@@ -282,7 +308,7 @@
                 <img src="/images/logoClientes/Logo-Lundgaard-Jensen-Banner 1.png">
                 <img src="/images/logoClientes/logoLaVillaSVGBranco 1.png">
             </div>
-            <div class="logos-slide">
+            <div class="logos-slide logos-2">
                 <img src="/images/logoClientes/ceftemLogo.png">
                 <img src="/images/logoClientes/logo 1.png">
                 <img src="/images/logoClientes/Logo Branco - Thermas Acqualinda-min 1.png">
@@ -476,33 +502,29 @@
     <div class="container-fluid" id="tela-acesso-rapido">
         <div class="row align-items-center" style="padding-bottom: 10px">
             <div class="col-lg-1"></div>
-            <div class="col-lg-7">
-                <div class="help-section">
-                    <h4>Precisa de ajuda?</h4>
-                    <div class="d-flex flex-wrap flex cont-link-help" style="padding-top: 20px;">
-                        <a href="#" class="links-help btn"><img class="icones-links" style="width: 22px;" src="images/iconesAcessoRapido/iconeDocumentacao.svg">Documentação</a>
-                        <a href="#" class="links-help btn"><img class="icones-links" style="width: 28px;" src="images/iconesAcessoRapido/iconeAgendamento.svg">Agendamento</a>
-                        <a href="#" class="links-help btn"><img class="icones-links" style="width: 18px;" src="images/iconesAcessoRapido/iconePlanosEPrecos.svg">Planos e preços</a>
-                        <a href="#" class="links-help btn"><img class="icones-links" style="width: 18px;" src="images/iconesAcessoRapido/iconeRecursos.svg">Recursos</a>
-                        <a href="#" class="links-help btn"><img class="icones-links" style="width: 18px;" src="images/iconesAcessoRapido/iconeQuestao.svg">Ajuda</a>
-                    </div>
+            <div class="col-lg-7 help-section">             
+                <h4>Precisa de ajuda?</h4>
+                <div class="d-flex flex-wrap cont-link-help" style="padding-top: 20px;">
+                    <a href="#" class="links-help btn"><img class="icones-links" style="width: 22px;" src="images/iconesAcessoRapido/iconeDocumentacao.svg">Documentação</a>
+                    <a href="#" class="links-help btn"><img class="icones-links" style="width: 28px;" src="images/iconesAcessoRapido/iconeAgendamento.svg">Agendamento</a>
+                    <a href="#" class="links-help btn"><img class="icones-links" style="width: 18px;" src="images/iconesAcessoRapido/iconePlanosEPrecos.svg">Planos e preços</a>
+                    <a href="#" class="links-help btn"><img class="icones-links" style="width: 18px;" src="images/iconesAcessoRapido/iconeRecursos.svg">Recursos</a>
+                    <a href="#" class="links-help btn"><img class="icones-links" style="width: 18px;" src="images/iconesAcessoRapido/iconeQuestao.svg">Ajuda</a>
                 </div>
             </div>
             <div class="hor-acesso-rapido">
                 <hr>
             </div>
-            <div class="col-lg-4">
-                <div class="topic-relev">
-                    <h6 class="title-top-relev"><span><img src="images/iconesAcessoRapido/iconeMaisRelevante.svg"></span> Tópicos mais relevantes</h6>
-                    <ul style="list-style-type: none; margin-top: 20px; padding: 0">
-                        <li style="margin-bottom: 20px"><a class="link-topicos-relev" href="#">Como criar uma conta no Interago</a></li>
-                        <li style="margin-bottom: 20px"><a class="link-topicos-relev" href="#">Como acessar os relatórios de visitas</a></li>
-                        <li style="margin-bottom: 20px"><a class="link-topicos-relev" href="#">Cadastrando seus produtos</a></li>
-                        <li style="margin-bottom: 20px"><a class="link-topicos-relev" href="#">Configurando Mercado Pago</a></li>
-                        <li style="margin-bottom: 20px"><a class="link-topicos-relev" href="#">Configurando Frenet</a></li>
-                        <li style="margin-bottom: 20px"><a class="link-topicos-relev" href="#">Como adicionar contatos para receber relatórios</a></li>
-                    </ul>
-                </div>
+            <div class="col-lg-4 topic-relev">
+                <h6 class="title-top-relev"><span><img src="images/iconesAcessoRapido/iconeMaisRelevante.svg"></span> Tópicos mais relevantes</h6>
+                <ul style="list-style-type: none; margin-top: 20px; padding: 0">
+                    <li><a class="link-topicos-relev" href="#">Como criar uma conta no Interago</a></li>
+                    <li><a class="link-topicos-relev" href="#">Como acessar os relatórios de visitas</a></li>
+                    <li><a class="link-topicos-relev" href="#">Cadastrando seus produtos</a></li>
+                    <li><a class="link-topicos-relev" href="#">Configurando Mercado Pago</a></li>
+                    <li><a class="link-topicos-relev" href="#">Configurando Frenet</a></li>
+                    <li><a class="link-topicos-relev" href="#">Como adicionar contatos para receber relatórios</a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -519,7 +541,7 @@
                 <hr>
             </div>  
             <div class="col-lg-5">
-                    <p style="font-size: 15px; font-weight: 600">Plataforma</p>
+                    <p>Plataforma</p>
                     <div class="row">
                         <div class="col-lg-6">
                             <a class="links-footer" href="#">Inicial</a>
